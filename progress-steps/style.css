@@ -1,0 +1,90 @@
+*{
+  box-sizing: border-box;
+}
+
+
+body {
+  background: linear-gradient(lightpink, violet);
+  font-family: Georgia, "Times New Roman", Times, serif;
+  color: rgba(97, 30, 160, 0.938);
+  height: 100vh;
+  overflow: hidden;
+}
+h1{
+  text-transform: uppercase;
+  font-style: italic;
+  text-align: center;
+}
+
+.container {
+  text-align: center;
+  width: 100%;
+  margin-top: 200px;
+}
+.progressbar{
+  counter-reset: step;
+} 
+
+.progressbar li{
+  list-style-type: none;
+  float: left;
+  width: 25%;
+  position: relative;
+  text-align: center;
+  margin-bottom: 100px; 
+  color: black;
+}
+
+.progressbar li::before{
+  content: counter(step);
+  counter-increment: step;
+  width: 40px;
+  height: 40px;
+  line-height: 30px;
+  border: 1px solid #ddd;
+  display: block;
+  text-align: center;
+  margin: 0 auto 10px auto;
+  border-radius: 50%;
+  background-color: rgb(118, 61, 133);
+}
+.progressbar li::after{
+content: '';
+position: absolute;
+width: 100%;
+height: 4px;
+background-color:#ddd;
+top: 15px;
+left: -50%;
+z-index: -1;
+
+}
+button{
+  background-color: purple;
+  color: black;
+  width: 100px;
+  border: none;
+  cursor: pointer;
+  padding: 8px 30px;
+  margin-right: 20px;
+  margin-top: 30px;
+  font-size: 16px;
+}
+button:hover{
+  background-color:rgb(161, 82, 161) ;
+  color: lightseagreen;
+} 
+button:disabled{
+  background-color:gainsboro ;
+  cursor: not-allowed;
+}
+
+.progressbar li:first-child:after{
+  content: none;
+} 
+.progressbar li.active{
+
+  color: rgb(12, 248, 236);
+}
+
+
